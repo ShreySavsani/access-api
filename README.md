@@ -36,6 +36,20 @@ A comprehensive FastAPI application for managing access control across different
 - `PUT /{id}` - Update IT staff information
 - `DELETE /{id}` - Delete an IT staff member
 
+### Staff (`/api/v1/staff/`)
+- `POST /` - Create a new staff member
+- `GET /` - List all staff (with pagination)
+- `GET /{id}` - Get specific staff by ID
+- `PUT /{id}` - Update staff information
+- `DELETE /{id}` - Delete a staff member
+
+### Patients (`/api/v1/patients/`)
+- `POST /` - Create a new patient
+- `GET /` - List all patients (with pagination)
+- `GET /{id}` - Get specific patient by ID
+- `PUT /{id}` - Update patient information
+- `DELETE /{id}` - Delete a patient
+
 ## 🏗️ Project Structure
 
 ```
@@ -46,7 +60,9 @@ access-api/
 │   │       ├── endpoints/         # Individual endpoint modules
 │   │       │   ├── students.py    # Student endpoints
 │   │       │   ├── faculty.py     # Faculty endpoints
-│   │       │   └── it_staff.py    # IT staff endpoints
+│   │       │   ├── it_staff.py    # IT staff endpoints
+│   │       │   ├── staff.py       # Staff endpoints
+│   │       │   └── patients.py    # Patient endpoints
 │   │       └── __init__.py        # API router setup
 │   ├── core/                      # Core functionality
 │   │   └── config.py              # Application configuration
@@ -55,15 +71,21 @@ access-api/
 │   ├── models/                    # SQLAlchemy database models
 │   │   ├── student.py             # Student model
 │   │   ├── faculty.py             # Faculty model
-│   │   └── it_staff.py            # IT staff model
+│   │   ├── it_staff.py            # IT staff model
+│   │   ├── staff.py               # Staff model
+│   │   └── patient.py             # Patient model
 │   ├── schemas/                   # Pydantic request/response schemas
 │   │   ├── student.py             # Student schemas
 │   │   ├── faculty.py             # Faculty schemas
-│   │   └── it_staff.py            # IT staff schemas
+│   │   ├── it_staff.py            # IT staff schemas
+│   │   ├── staff.py               # Staff schemas
+│   │   └── patient.py             # Patient schemas
 │   ├── services/                  # Business logic layer
 │   │   ├── student_service.py     # Student business logic
 │   │   ├── faculty_service.py     # Faculty business logic
-│   │   └── it_staff_service.py    # IT staff business logic
+│   │   ├── it_staff_service.py    # IT staff business logic
+│   │   ├── staff_service.py       # Staff business logic
+│   │   └── patient_service.py     # Patient business logic
 │   ├── utils/                     # Utility functions
 │   └── main.py                    # FastAPI application entry point
 ├── tests/                         # Test suite
